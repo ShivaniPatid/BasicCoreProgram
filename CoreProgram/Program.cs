@@ -6,7 +6,7 @@ namespace CoreProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Number\n 1. Flip Coin\t 2. Leap Year\t 3. Print Table\t 4. Harmonic Number\t 5. Prime Factor");
+            Console.WriteLine("Enter Number\n 1. Flip Coin\t 2. Leap Year\t 3. Print Table\t 4. Harmonic Number\t 5. Prime Factor\n 6. Compute Quotient and Remainder");
             int num=Convert.ToInt32(Console.ReadLine());
             switch (num)
             {
@@ -17,13 +17,16 @@ namespace CoreProgram
                     LeapYear.CheckLeapYear();
                     break;
                 case 3:
-                    Power.PrintTable();
+                    Power.PowerOfN();
                     break;
                 case 4:
                     HarmonicNumber.HarmonicValue();
                     break;
                 case 5:
                     PrimeFactor.PrimeFactors();
+                    break;
+                case 6:
+                    QuotientRemainder.ComputeQuotientRemainder();
                     break;
                 default:
                     Console.WriteLine("Entered wrong number");

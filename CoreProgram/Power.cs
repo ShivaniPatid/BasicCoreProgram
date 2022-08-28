@@ -3,17 +3,24 @@ namespace CoreProgram
 {
     internal class Power
     {
-        public static void PrintTable()
+        public static void PowerOfN()
         {
-            const int POWER_OF = 2;
-            Console.WriteLine("Enter the number");
-            int num=Convert.ToInt32(Console.ReadLine());
-          
-            for(int i = 1; i <= num; i++)
+            
+            Console.WriteLine("Please enter range for finding power table");
+            int range=Convert.ToInt32(Console.ReadLine());
+
+            
+            if (range < 0 || range > 32)
             {
-                int result = POWER_OF * i;
-                Console.Write("{0} * {1} = ",POWER_OF,i);
-                Console.WriteLine(result);
+                Console.WriteLine("Please enter number between 0 to 31");
+            }
+            else
+            {
+                for (int i = 0; i < range; i++)
+                {
+                    Console.WriteLine((int)Math.Pow(i, 2));
+                }
+
             }
         }
     }
