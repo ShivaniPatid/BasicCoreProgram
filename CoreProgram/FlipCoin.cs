@@ -11,28 +11,37 @@ namespace CoreProgram
         public static void PercentageHeadsTails()
         {
             int h_count = 0, t_count = 0;
-            Console.WriteLine("enter number of times you want to filp the coin : ");
-            int n=Convert.ToInt32(Console.ReadLine());
             double heads, tails;
-            for (int i = 0; i < n; i++)
+            Console.WriteLine("enter number of times you want to filp the coin : ");
+            int number=Convert.ToInt32(Console.ReadLine());
+            if (number > 0)
             {
-                Random random = new Random();
-                int v=random.Next(0,2);
-                Console.WriteLine("random value : "+v);
-                if (v == 0)
+                for (int i = 0; i < number; i++)
                 {
-                    t_count++;
-                }
-                else
-                {
-                    h_count++;
-                }
+                    Random random = new Random();
+                    double randomnum = random.NextDouble();
+                    
+                    if (randomnum > 0.5)
+                    {
+                        Console.WriteLine("head");
+                        h_count++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("tail");
+                        t_count++;
+                    }
 
+                }
+                heads = h_count * 100 / number;
+                tails = t_count *100 / number;
+                Console.WriteLine("Persentage of heads : " + heads + "%");
+                Console.WriteLine("Percentage of tails : " + tails + "%");
             }
-            heads = h_count / (double)n * 100;
-            tails = t_count / (double)n * 100;
-            Console.WriteLine("Persentage of heads : "+heads+"%");
-            Console.WriteLine("Percentage of tails : "+tails+"%");
+            else
+            {
+                Console.WriteLine("Give only positive number");
+            }
         }
     }
 }
